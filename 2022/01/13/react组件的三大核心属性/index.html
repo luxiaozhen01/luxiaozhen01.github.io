@@ -4,24 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="react介绍描述, Hexo">
-    <meta name="description" content="##介绍描述
-
-用于动态构建用户界面的 JavaScript 库(只关注于视图)
-
-由Facebook开源
-
-
-##React的特点
-
-声明式编码
-
-组件化编码
-
-React Native 编写原生应用
-
-高效（优秀的Diffing算法）
-">
+    <meta name="keywords" content="react组件的三大核心属性, Hexo">
+    <meta name="description" content="state理解​                        1. state是组件对象最重要的属性, 值是对象(可以包含多个key-value的组合)
+​                        2. 组件被称为”状态机”, 通过">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +18,7 @@ React Native 编写原生应用
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>react介绍描述 | Hexo</title>
+    <title>react组件的三大核心属性 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -325,12 +310,12 @@ React Native 编写原生应用
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">react介绍描述</h1>
+                    <h1 class="description center-align post-title">react组件的三大核心属性</h1>
                 </div>
             </div>
         </div>
@@ -483,42 +468,48 @@ React Native 编写原生应用
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##介绍描述</p>
-<ol>
-<li><p>用于动态构建用户界面的 JavaScript 库(只关注于视图)</p>
-</li>
-<li><p>由Facebook开源</p>
-</li>
-</ol>
-<p>##React的特点</p>
-<ol>
-<li><p>声明式编码</p>
-</li>
-<li><p>组件化编码</p>
-</li>
-<li><p>React Native 编写原生应用</p>
-</li>
-<li><p>高效（优秀的Diffing算法）</p>
-</li>
-</ol>
-<p>##React高效的原因</p>
-<ol>
-<li><p>使用虚拟(virtual)DOM, 不总是直接操作页面真实DOM。</p>
-</li>
-<li><p>DOM Diffing算法, 最小化页面重绘。</p>
-</li>
-</ol>
-<p>##虚拟DOM与真实DOM</p>
-<ol>
-<li><p>React提供了一些API来创建一种 “特别” 的一般js对象</p>
-<p><strong>const    VDOM = React.createElement(‘xx’,{id:’xx’},’xx’)</strong></p>
-<p>上面创建的就是一个简单的虚拟DOM对象</p>
-</li>
-<li><p>虚拟DOM对象最终都会被React转换为真实的DOM</p>
-</li>
-<li><p>我们编码时基本只需要操作react的虚拟DOM相关数据, react会转换为真实DOM变化而更新界。</p>
-</li>
-</ol>
+                <h2 id="state"><a href="#state" class="headerlink" title="state"></a>state</h2><h4 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h4><p>​                        1. state是组件对象最重要的属性, 值是对象(可以包含多个key-value的组合)</p>
+<p>​                        2. 组件被称为”状态机”, 通过更新组件的state来更新对应的页面显示(重新渲染组件)</p>
+<h4 id="强烈注意"><a href="#强烈注意" class="headerlink" title="强烈注意"></a>强烈注意</h4><p>​                        1. 组件中render方法中的this为组件实例对象</p>
+<p>​                        2. 组件自定义的方法中this为undefined，如何解决？</p>
+<p>​                                 ① 强制绑定this: 通过函数对象的bind()</p>
+<p>​                                 ② 箭头函数</p>
+<p>​                        3. 状态数据，不能直接修改或更新</p>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><h4 id="理解-1"><a href="#理解-1" class="headerlink" title="理解"></a>理解</h4><p>​                       1. 每个组件对象都会有props(properties的简写)属性</p>
+<p>​                       2. 组件标签的所有属性都保存在props中</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>​                       1. 通过标签属性从组件外向组件内传递变化的数据</p>
+<p>​                       2. 注意: 组件内部不要修改props数据</p>
+<h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>​                       1. 内部读取某个属性值</p>
+<p>​                                <strong>this.props.name</strong></p>
+<p>​                       2. 对props中的属性值进行类型限制和必要性限制</p>
+<p>​                                使用prop-types库进限制（需要引入prop-types库）</p>
+<p>​                                        <strong>Person.propTypes = {</strong></p>
+<p>​                                                <strong>name: PropTypes.string.isRequired,</strong></p>
+<p>​                                                <strong>age: PropTypes.number</strong></p>
+<p>​                                        <strong>}</strong></p>
+<p>​                       3. 扩展属性: 将对象的所有属性通过props传递</p>
+<p>​                                <strong>&lt;Person {…person}/&gt;</strong></p>
+<p>​                       4.默认属性值</p>
+<p>​                                   <strong>Person.defaultProps = {</strong></p>
+<p>​                                            <strong>age: 18,</strong></p>
+<p>​                                            <strong>sex: “男”</strong></p>
+<p>​                                    <strong>}</strong></p>
+<p>​                       5.组件类的构造函数</p>
+<p>​                                   <strong>constructor(props){</strong></p>
+<p>​                                         <strong>super(props)</strong>    </p>
+<p>​                                    <strong>}</strong></p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><h4 id="理解-2"><a href="#理解-2" class="headerlink" title="理解"></a>理解</h4><p>​                      组件内的标签可以定义ref属性来标识自己</p>
+<h4 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h4><p>​                    1.字符串形式的ref         </p>
+<p>​                                    <strong><input ref="input1"/></strong>                    </p>
+<p>​                    2.回调形式的ref</p>
+<p>​                                    <strong>&lt;input ref={(c)=&gt;{this.input1 = c}}/&gt;</strong>        </p>
+<p>​                    3.create创建ref容器</p>
+<p>​                                    <strong>myRef = React.createRef()</strong></p>
+<p>​                                    <strong><input ref={this.myRef}/></strong>        </p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>​        1. 通过onXxx属性指定事件处理函数(注意大小写)</p>
+<p>​                （1) React使用的是自定义(合成)事件, 而不是使用的原生DOM事件</p>
+<p>​                （2) React中的事件是通过事件委托方式处理的(委托给组件最外层的元素)</p>
+<p>​       2. 通过event.target得到发生事件的DOM元素对象</p>
 
                 
             </div>
@@ -545,7 +536,7 @@ React Native 编写原生应用
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luxiaozhen01.github.io/2022/01/13/react%E4%BB%8B%E7%BB%8D%E6%8F%8F%E8%BF%B0/">https://luxiaozhen01.github.io/2022/01/13/react%E4%BB%8B%E7%BB%8D%E6%8F%8F%E8%BF%B0/</a>
+                    <a href="https://luxiaozhen01.github.io/2022/01/13/react%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/">https://luxiaozhen01.github.io/2022/01/13/react%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -760,13 +751,13 @@ React Native 编写原生应用
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/01/13/%E6%A8%A1%E5%9D%97%E4%B8%8E%E7%BB%84%E4%BB%B6%E3%80%81%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <a href="/2022/01/14/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="模块与组件、模块化与组件化的理解">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="react生命周期">
                         
-                        <span class="card-title">模块与组件、模块化与组件化的理解</span>
+                        <span class="card-title">react生命周期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,7 +768,7 @@ React Native 编写原生应用
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
                         </span>
                         <span class="publish-author">
                             
@@ -805,13 +796,13 @@ React Native 编写原生应用
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/28/hello-world/">
+                <a href="/2022/01/13/%E6%A8%A1%E5%9D%97%E4%B8%8E%E7%BB%84%E4%BB%B6%E3%80%81%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="模块与组件、模块化与组件化的理解">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">模块与组件、模块化与组件化的理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -822,7 +813,7 @@ React Native 编写原生应用
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
                             </span>
                         <span class="publish-author">
                             
@@ -831,6 +822,14 @@ React Native 编写原生应用
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
+                    </a>
+                    
                 </div>
                 
             </div>

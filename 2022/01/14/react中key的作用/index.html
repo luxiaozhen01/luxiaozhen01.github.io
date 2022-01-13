@@ -4,24 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="react介绍描述, Hexo">
-    <meta name="description" content="##介绍描述
-
-用于动态构建用户界面的 JavaScript 库(只关注于视图)
-
-由Facebook开源
-
-
-##React的特点
-
-声明式编码
-
-组件化编码
-
-React Native 编写原生应用
-
-高效（优秀的Diffing算法）
-">
+    <meta name="keywords" content="react中key的作用, Hexo">
+    <meta name="description" content="经典面试题:   一. react/vue中的key有什么作用？（key的内部原理是什么？）
+   二. 为什么遍历列表时，key最好不要用index?
+​    1. 虚拟DOM中key的作用：
+​      （1). 简单的说: key">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +20,7 @@ React Native 编写原生应用
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>react介绍描述 | Hexo</title>
+    <title>react中key的作用 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -325,12 +312,12 @@ React Native 编写原生应用
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">react介绍描述</h1>
+                    <h1 class="description center-align post-title">react中key的作用</h1>
                 </div>
             </div>
         </div>
@@ -462,7 +449,7 @@ React Native 编写原生应用
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-01-14
                 </div>
                 
 
@@ -483,42 +470,23 @@ React Native 编写原生应用
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##介绍描述</p>
-<ol>
-<li><p>用于动态构建用户界面的 JavaScript 库(只关注于视图)</p>
-</li>
-<li><p>由Facebook开源</p>
-</li>
-</ol>
-<p>##React的特点</p>
-<ol>
-<li><p>声明式编码</p>
-</li>
-<li><p>组件化编码</p>
-</li>
-<li><p>React Native 编写原生应用</p>
-</li>
-<li><p>高效（优秀的Diffing算法）</p>
-</li>
-</ol>
-<p>##React高效的原因</p>
-<ol>
-<li><p>使用虚拟(virtual)DOM, 不总是直接操作页面真实DOM。</p>
-</li>
-<li><p>DOM Diffing算法, 最小化页面重绘。</p>
-</li>
-</ol>
-<p>##虚拟DOM与真实DOM</p>
-<ol>
-<li><p>React提供了一些API来创建一种 “特别” 的一般js对象</p>
-<p><strong>const    VDOM = React.createElement(‘xx’,{id:’xx’},’xx’)</strong></p>
-<p>上面创建的就是一个简单的虚拟DOM对象</p>
-</li>
-<li><p>虚拟DOM对象最终都会被React转换为真实的DOM</p>
-</li>
-<li><p>我们编码时基本只需要操作react的虚拟DOM相关数据, react会转换为真实DOM变化而更新界。</p>
-</li>
-</ol>
+                <h3 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题:"></a>经典面试题:</h3><p>   <em>一. react/vue中的key有什么作用？（key的内部原理是什么？）</em></p>
+<p>   <em>二. 为什么遍历列表时，key最好不要用index?</em></p>
+<p>​    <strong>1. 虚拟DOM中key的作用：</strong></p>
+<p>​      （1). 简单的说: key是虚拟DOM对象的标识, 在更新显示时key起着极其重要的作用。</p>
+<p>​      （2). 详细的说: 当状态中的数据发生变化时，react会根据【新数据】生成【新的虚拟DOM】, 随后React进行【新虚拟DOM】与【旧虚拟DOM】的diff比较，比较规则如下：</p>
+<p>​                 ①. 旧虚拟DOM中找到了与新虚拟DOM相同的key：</p>
+<p>​                         a.若虚拟DOM中内容没变, 直接使用之前的真实DOM</p>
+<p>​                         b.若虚拟DOM中内容变了, 则生成新的真实DOM，随后替换掉页面中之前的真实DOM</p>
+<p>​                 ②. 旧虚拟DOM中未找到与新虚拟DOM相同的key根据数据创建新的真实DOM，随后渲染到到页面</p>
+<p>​    <strong>2.用index作为key可能会引发的问题：</strong></p>
+<p>​       (1). 若对数据进行：逆序添加、逆序删除等破坏顺序操作,会产生没有必要的真实DOM更新 ==&gt; 界面效果没问题, 但效率低。</p>
+<p>​       (2). 如果结构中还包含输入类的DOM,会产生错误DOM更新 ==&gt; 界面有问题。</p>
+<p>​       (3). 注意！如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，仅用于渲染列表用于展示，使用index作为key是没有问题的。</p>
+<p>​          </p>
+<p>​    <strong>3. 开发中如何选择key:</strong></p>
+<p>​      (1).最好使用每条数据的唯一标识作为key, 比如id、手机号、身份证号、学号等唯一值。</p>
+<p>​      (2).如果确定只是简单的展示数据，用index也是可以的。</p>
 
                 
             </div>
@@ -545,7 +513,7 @@ React Native 编写原生应用
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luxiaozhen01.github.io/2022/01/13/react%E4%BB%8B%E7%BB%8D%E6%8F%8F%E8%BF%B0/">https://luxiaozhen01.github.io/2022/01/13/react%E4%BB%8B%E7%BB%8D%E6%8F%8F%E8%BF%B0/</a>
+                    <a href="https://luxiaozhen01.github.io/2022/01/14/react%E4%B8%ADkey%E7%9A%84%E4%BD%9C%E7%94%A8/">https://luxiaozhen01.github.io/2022/01/14/react%E4%B8%ADkey%E7%9A%84%E4%BD%9C%E7%94%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -760,13 +728,13 @@ React Native 编写原生应用
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/01/13/%E6%A8%A1%E5%9D%97%E4%B8%8E%E7%BB%84%E4%BB%B6%E3%80%81%E6%A8%A1%E5%9D%97%E5%8C%96%E4%B8%8E%E7%BB%84%E4%BB%B6%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <a href="/2022/01/14/react-jsx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="模块与组件、模块化与组件化的理解">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="react-jsx">
                         
-                        <span class="card-title">模块与组件、模块化与组件化的理解</span>
+                        <span class="card-title">react-jsx</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,7 +745,7 @@ React Native 编写原生应用
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
                         </span>
                         <span class="publish-author">
                             
@@ -805,13 +773,13 @@ React Native 编写原生应用
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/28/hello-world/">
+                <a href="/2022/01/14/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="react生命周期">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">react生命周期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -822,7 +790,7 @@ React Native 编写原生应用
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
                             </span>
                         <span class="publish-author">
                             
@@ -831,6 +799,14 @@ React Native 编写原生应用
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
+                    </a>
+                    
                 </div>
                 
             </div>
