@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="react-jsx, Hexo">
-    <meta name="description" content="
-全称:  JavaScript XML
-
-react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.createElement(component,props,…children) 方法的语法糖
-
-作用: 用来">
+    <meta name="keywords" content="react路由, Hexo">
+    <meta name="description" content="SPA的理解​                1. 单页Web应用（single page web application，SPA）。
+​                2. 整个应用只有一个完整的页面。
+​                ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +19,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>react-jsx | Hexo</title>
+    <title>react路由 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +311,12 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">react-jsx</h1>
+                    <h1 class="description center-align post-title">react路由</h1>
                 </div>
             </div>
         </div>
@@ -451,7 +448,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-14
+                    2022-01-16
                 </div>
                 
 
@@ -472,35 +469,70 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li><p>全称:  JavaScript XML</p>
-</li>
-<li><p>react定义的一种类似于XML的JS扩展语法: JS + XML本质是 <strong>React.createElement(component,props,…children)</strong> 方法的语法糖</p>
-</li>
-<li><p>作用: 用来简化创建虚拟DOM </p>
-</li>
-</ol>
-<p>​         (1) 写法：<strong>var  ele = &lt; h3 &gt; hello,jsx!&lt; /h3 &gt;</strong></p>
-<p>​         (2) 注意1：它不是字符串, 也不是HTML/XML标签</p>
-<p>​         (3) 注意2：它最终产生的就是一个JS对象</p>
-<ol start="4">
-<li><p>标签名任意: HTML标签或其它标签</p>
-</li>
-<li><p>标签属性任意: HTML标签属性或其它</p>
-</li>
-<li><p>基本语法规则</p>
-<p>(1). 遇到 &lt;开头的代码, 以标签的语法解析: html同名标签转换为html同名元素, 其它标签需要特别解析</p>
-<p>(2).遇到以 { 开头的代码，以JS语法解析: 标签中的js表达式必须用{ }包含</p>
-<p>(3).定义虚拟DOM时，不要写引号</p>
-<p>(4).样式的类名指定不要用class，要用className</p>
-<p>(5).内联样式，要用style= <strong>{</strong>{key:value}<strong>}</strong> 的形式去写</p>
-<p>(6).只有一个根标签</p>
-<p>(7).标签必须闭合</p>
-<p>(8).标签首字母</p>
-<p>​         ①.若小写字母开头，则将该标签转为html中同名元素，若html中无该标签对应的同名元素，则报错</p>
-<p>​         ②.若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错</p>
-</li>
-</ol>
+                <h4 id="SPA的理解"><a href="#SPA的理解" class="headerlink" title="SPA的理解"></a>SPA的理解</h4><p>​                1. 单页Web应用（single page web application，SPA）。</p>
+<p>​                2. 整个应用只有<strong>一个完整的页面</strong>。</p>
+<p>​                3. 点击页面中的链接<strong>不会刷新</strong>页面，只会做页面的<strong>局部更新</strong>。</p>
+<p>​                4. 数据都需要通过ajax请求获取, 并在前端异步展现。</p>
+<h4 id="路由的理解"><a href="#路由的理解" class="headerlink" title="路由的理解"></a>路由的理解</h4><h5 id="1-什么是路由"><a href="#1-什么是路由" class="headerlink" title="1.什么是路由?"></a>1.什么是路由?</h5><p>​                          (1). 一个路由就是一个映射关系(key:value)</p>
+<p>​                          (2). key为路径, value可能是function或component</p>
+<h5 id="2-路由分类"><a href="#2-路由分类" class="headerlink" title="2.路由分类"></a>2.路由分类</h5><h6 id="1-后端路由："><a href="#1-后端路由：" class="headerlink" title="(1). 后端路由："></a>(1). 后端路由：</h6><p>​                           (1) 理解： value是function, 用来处理客户端提交的请求。</p>
+<p>​                           (2) 注册路由： router.get(path, function(req, res))</p>
+<p>​                           (3) 工作过程：当node接收到一个请求时, 根据请求路径找到匹配的路由, 调用路由中的函数来处理请求, 返回响应数据</p>
+<h6 id="2-前端路由："><a href="#2-前端路由：" class="headerlink" title="(2). 前端路由："></a>(2). 前端路由：</h6><p>​                           (1) 浏览器端路由，value是component，用于展示页面内容。</p>
+<p>​                           (2) 注册路由: &lt; Route path=”/test” component={Test} &gt;</p>
+<p>​                           (3) 工作过程：当浏览器的path变为/test时, 当前路由组件就会变为Test组件</p>
+<h4 id="react-router-dom的理解"><a href="#react-router-dom的理解" class="headerlink" title="react-router-dom的理解"></a>react-router-dom的理解</h4><p>​                           (1). react的一个插件库。</p>
+<p>​                           (2). 专门用来实现一个SPA应用。</p>
+<p>​                           (3). 基于react的项目基本都会用到此库。</p>
+<h4 id="react-router-dom相关API"><a href="#react-router-dom相关API" class="headerlink" title="react-router-dom相关API"></a><strong>react-router-dom相关API</strong></h4><h5 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h5><p>​                        1. &lt; BrowserRouter &gt;</p>
+<p>​                        2. &lt; HashRouter &gt;</p>
+<p>​                        3. &lt; Route &gt;</p>
+<p>​                        4. &lt; Redirect &gt;</p>
+<p>​                        5. &lt; Link &gt;</p>
+<p>​                        6. &lt; NavLink &gt;</p>
+<p>​                        7. &lt; Switch &gt;</p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p>​                        1. history对象</p>
+<p>​                        2. match对象</p>
+<p>​                        3. withRouter函数        </p>
+<h4 id="基本路由使用"><a href="#基本路由使用" class="headerlink" title="基本路由使用"></a>基本路由使用</h4><p>​                       1. 下载 react-router-dom:  npm install –save react-router-dom</p>
+<p>​                       2. 引入bootstrap.css: &lt; link rel=”stylesheet” href=”/css/bootstrap.css” &gt;</p>
+<p>​                                (1).明确好界面中的导航区、展示区</p>
+<p>​                                (2).导航区的a标签改为Link标签&lt; Link to=”/xxxxx” &gt;Demo&lt;/ Link &gt;</p>
+<p>​                                (3).展示区写Route标签进行路径的匹配&lt; Route path=’/xxxx’ component={Demo}/ &gt;</p>
+<p>​                                (4).&lt; App &gt;的最外侧包裹了一个&lt; BrowserRouter &gt;或&lt; HashRouter &gt;</p>
+<h4 id="路由组件与一般组件"><a href="#路由组件与一般组件" class="headerlink" title="路由组件与一般组件"></a>路由组件与一般组件</h4><p>​                         1.写法不同：</p>
+<p>​                                     一般组件：&lt; Demo/ &gt;</p>
+<p>​                                    路由组件：&lt; Route path=”/demo” component={Demo}/ &gt;</p>
+<p>​                          2.存放位置不同：</p>
+<p>​                                            一般组件：components</p>
+<p>​                                            路由组件：pages</p>
+<p>​                         3.接收到的props不同：</p>
+<p>​                                            一般组件：写组件标签时传递了什么，就能收到什么</p>
+<p>​                                            路由组件：接收到三个固定的属性history、location、match</p>
+<h4 id="NavLink与封装NavLink"><a href="#NavLink与封装NavLink" class="headerlink" title="NavLink与封装NavLink"></a><strong>NavLink与封装NavLink</strong></h4><p>​                              1.NavLink可以实现路由链接的高亮，通过activeClassName指定样式名</p>
+<h4 id="Switch的使用"><a href="#Switch的使用" class="headerlink" title="Switch的使用"></a><strong>Switch的使用</strong></h4><p>​    1.通常情况下，path和component是一一对应的关系。</p>
+<p>​    2.Switch可以提高路由匹配效率(单一匹配)。</p>
+<h4 id="解决多级路径刷新页面样式丢失的问题"><a href="#解决多级路径刷新页面样式丢失的问题" class="headerlink" title="解决多级路径刷新页面样式丢失的问题"></a><strong>解决多级路径刷新页面样式丢失的问题</strong></h4><p>​     1.public/index.html 中 引入样式时不写 ./ 写 / （常用）</p>
+<p>​        2.public/index.html 中 引入样式时不写 ./ 写 %PUBLIC_URL% （常用）</p>
+<p>​        3.使用HashRouter</p>
+<h4 id="路由的严格匹配与模糊匹配"><a href="#路由的严格匹配与模糊匹配" class="headerlink" title="路由的严格匹配与模糊匹配"></a><strong>路由的严格匹配与模糊匹配</strong></h4><p>​    1.默认使用的是模糊匹配（简单记：【输入的路径】必须包含要【匹配的路径】，且顺序要一致）</p>
+<p>​        2.开启严格匹配：&lt; Route exact={true} path=”/about” component={About} &gt;</p>
+<p>​        3.严格匹配不要随便开启，需要再开，有些时候开启会导致无法继续匹配二级路由</p>
+<h4 id="Redirect的使用"><a href="#Redirect的使用" class="headerlink" title="Redirect的使用"></a><strong>Redirect的使用</strong></h4><p> 1.一般写在所有路由注册的最下方，当所有路由都无法匹配时，跳转到Redirect指定的路由</p>
+<h4 id="向路由组件传递参数"><a href="#向路由组件传递参数" class="headerlink" title="向路由组件传递参数"></a><strong>向路由组件传递参数</strong></h4><p> <strong>1.params参数</strong></p>
+<p>​              路由链接(携带参数)：&lt; Link to=’/demo/test/tom/18’} &gt;详情&lt; /Link &gt;</p>
+<p>​              注册路由(声明接收)：&lt; Route path=”/demo/test/:name/:age” component={Test}/ &gt;</p>
+<p>​              接收参数：this.props.match.params</p>
+<p>​        <strong>2.search参数</strong></p>
+<p>​              路由链接(携带参数)：&lt;Link to=’/demo/test?name=tom&amp;age=18’}&gt;详情&lt; /Link &gt;</p>
+<p>​              注册路由(无需声明，正常注册即可)：&lt; Route path=”/demo/test” component={Test}/ &gt;</p>
+<p>​              接收参数：this.props.location.search</p>
+<p>​              备注：获取到的search是urlencoded编码字符串，需要借助querystring解析</p>
+<p>​       <strong>3.state参数</strong></p>
+<p>​              路由链接(携带参数)：&lt; Link to=*{* **{**pathname:’/demo/test’,state:{name:’tom’,age:18}**}** *}* &gt;详情&lt; /Link &gt;</p>
+<p>​              注册路由(无需声明，正常注册即可)：&lt; Route path=”/demo/test” component={Test}/ &gt;</p>
+<p>​              接收参数：this.props.location.state</p>
+<p>​              备注：刷新也可以保留住参数</p>
 
                 
             </div>
@@ -527,7 +559,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luxiaozhen01.github.io/2022/01/14/react-jsx/">https://luxiaozhen01.github.io/2022/01/14/react-jsx/</a>
+                    <a href="https://luxiaozhen01.github.io/2022/01/16/react%E8%B7%AF%E7%94%B1/">https://luxiaozhen01.github.io/2022/01/16/react%E8%B7%AF%E7%94%B1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -742,13 +774,13 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/01/16/react%E8%84%9A%E6%89%8B%E6%9E%B6/">
+                <a href="/2022/01/16/redux/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="react脚手架">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="redux">
                         
-                        <span class="card-title">react脚手架</span>
+                        <span class="card-title">redux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -787,13 +819,13 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/14/react%E4%B8%ADkey%E7%9A%84%E4%BD%9C%E7%94%A8/">
+                <a href="/2022/01/16/react-ajax/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="react中key的作用">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="react-ajax">
                         
-                        <span class="card-title">react中key的作用</span>
+                        <span class="card-title">react-ajax</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -804,7 +836,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
                             </span>
                         <span class="publish-author">
                             

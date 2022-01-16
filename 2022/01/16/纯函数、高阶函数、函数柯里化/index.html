@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="react-jsx, Hexo">
-    <meta name="description" content="
-全称:  JavaScript XML
-
-react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.createElement(component,props,…children) 方法的语法糖
-
-作用: 用来">
+    <meta name="keywords" content="纯函数、高阶函数、函数柯里化, Hexo">
+    <meta name="description" content="纯函数、高阶函数、函数柯里化纯函数​            1. 一类特别的函数: 只要是同样的输入(实参)，必定得到同样的输出(返回)
+​            2. 必须遵守以下一些约束 
+​                      ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +19,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>react-jsx | Hexo</title>
+    <title>纯函数、高阶函数、函数柯里化 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -314,12 +311,12 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">react-jsx</h1>
+                    <h1 class="description center-align post-title">纯函数、高阶函数、函数柯里化</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +432,8 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/react/">
-                                <span class="chip bg-color">react</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -451,7 +448,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-14
+                    2022-01-16
                 </div>
                 
 
@@ -472,35 +469,29 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li><p>全称:  JavaScript XML</p>
-</li>
-<li><p>react定义的一种类似于XML的JS扩展语法: JS + XML本质是 <strong>React.createElement(component,props,…children)</strong> 方法的语法糖</p>
-</li>
-<li><p>作用: 用来简化创建虚拟DOM </p>
-</li>
-</ol>
-<p>​         (1) 写法：<strong>var  ele = &lt; h3 &gt; hello,jsx!&lt; /h3 &gt;</strong></p>
-<p>​         (2) 注意1：它不是字符串, 也不是HTML/XML标签</p>
-<p>​         (3) 注意2：它最终产生的就是一个JS对象</p>
-<ol start="4">
-<li><p>标签名任意: HTML标签或其它标签</p>
-</li>
-<li><p>标签属性任意: HTML标签属性或其它</p>
-</li>
-<li><p>基本语法规则</p>
-<p>(1). 遇到 &lt;开头的代码, 以标签的语法解析: html同名标签转换为html同名元素, 其它标签需要特别解析</p>
-<p>(2).遇到以 { 开头的代码，以JS语法解析: 标签中的js表达式必须用{ }包含</p>
-<p>(3).定义虚拟DOM时，不要写引号</p>
-<p>(4).样式的类名指定不要用class，要用className</p>
-<p>(5).内联样式，要用style= <strong>{</strong>{key:value}<strong>}</strong> 的形式去写</p>
-<p>(6).只有一个根标签</p>
-<p>(7).标签必须闭合</p>
-<p>(8).标签首字母</p>
-<p>​         ①.若小写字母开头，则将该标签转为html中同名元素，若html中无该标签对应的同名元素，则报错</p>
-<p>​         ②.若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错</p>
-</li>
-</ol>
+                <h4 id="纯函数、高阶函数、函数柯里化"><a href="#纯函数、高阶函数、函数柯里化" class="headerlink" title="纯函数、高阶函数、函数柯里化"></a>纯函数、高阶函数、函数柯里化</h4><h5 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h5><p>​            1. 一类特别的函数: 只要是同样的输入(实参)，必定得到同样的输出(返回)</p>
+<p>​            2. 必须遵守以下一些约束 </p>
+<p>​                           (1) 不得改写参数数据</p>
+<p>​                           (2) 不会产生任何副作用，例如网络请求，输入和输出设备</p>
+<p>​                           (3) 不能调用Date.now()或者Math.random()等不纯的方法 </p>
+<p>​            3. redux的reducer函数必须是一个纯函数</p>
+<h5 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h5><p>​            1. 理解: 一类特别的函数</p>
+<p>​                    (1) 情况1: 参数是函数</p>
+<p>​                    (2) 情况2: 返回是函数</p>
+<p>​            2. 常见的高阶函数: </p>
+<p>​                    (1) 定时器设置函数</p>
+<p>​                    (2) 数组的forEach()/map()/filter()/reduce()/find()/bind()</p>
+<p>​                    (3) promise</p>
+<p>​                    (4) react-redux中的connect函数</p>
+<p>​             3. 作用: 能实现更加动态, 更加可扩展的功能</p>
+<h5 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h5><p>​            函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。 </p>
+<p>​            function sum(a){</p>
+<p>​                 return  (b)=&gt;{</p>
+<p>​                      return  (c)=&gt;{</p>
+<p>​                          return a+b+c</p>
+<p>​                      }</p>
+<p>​                  }</p>
+<p>​             }</p>
 
                 
             </div>
@@ -527,7 +518,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luxiaozhen01.github.io/2022/01/14/react-jsx/">https://luxiaozhen01.github.io/2022/01/14/react-jsx/</a>
+                    <a href="https://luxiaozhen01.github.io/2022/01/16/%E7%BA%AF%E5%87%BD%E6%95%B0%E3%80%81%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E3%80%81%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/">https://luxiaozhen01.github.io/2022/01/16/%E7%BA%AF%E5%87%BD%E6%95%B0%E3%80%81%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E3%80%81%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -565,8 +556,8 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/react/">
-                                    <span class="chip bg-color">react</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
                                 </a>
                             
                         </div>
@@ -738,17 +729,18 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2022/01/16/react%E8%84%9A%E6%89%8B%E6%9E%B6/">
+                <a href="/2022/01/16/%E7%BA%AF%E5%87%BD%E6%95%B0%E3%80%81%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E3%80%81%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="react脚手架">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="纯函数、高阶函数、函数柯里化">
                         
-                        <span class="card-title">react脚手架</span>
+                        <span class="card-title">纯函数、高阶函数、函数柯里化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,9 +750,9 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -769,11 +761,12 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>
@@ -787,13 +780,13 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/14/react%E4%B8%ADkey%E7%9A%84%E4%BD%9C%E7%94%A8/">
+                <a href="/2022/01/16/react-redux/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="react中key的作用">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="react-redux">
                         
-                        <span class="card-title">react中key的作用</span>
+                        <span class="card-title">react-redux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -804,7 +797,7 @@ react定义的一种类似于XML的JS扩展语法: JS + XML本质是 React.creat
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
                             </span>
                         <span class="publish-author">
                             
