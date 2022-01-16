@@ -472,20 +472,20 @@
                 <h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>​        1. 组件从创建到死亡它会经历一些特定的阶段。</p>
 <p>​        2. React组件中包含一系列勾子函数(生命周期回调函数), 会在特定的时刻调用。</p>
 <p>​        3. 我们在定义组件时，会在特定的生命周期回调函数中，做特定的工作。</p>
-<h3 id="生命周期流程图"><a href="#生命周期流程图" class="headerlink" title="生命周期流程图"></a>生命周期流程图</h3><p><img src="C:\Users\asus\AppData\Roaming\Typora\typora-user-images\image-20220114002453557.png"></p>
+<h3 id="生命周期流程图"><a href="#生命周期流程图" class="headerlink" title="生命周期流程图"></a>生命周期流程图</h3><p><img src="F:\blog\source_posts\图片1-16420966843673.png" alt="生命周期图"></p>
 <p>生命周期的三个阶段</p>
-<p>​           <strong>1.初始化阶段：</strong>由ReactDOM.render()触发—初次渲染</p>
+<p>​           <strong>1.初始化阶段:</strong> 由ReactDOM.render()触发—初次渲染</p>
 <p>​                            (1). constructor()</p>
 <p>​                            (2).getDerivedStateFromProps</p>
 <p>​                            (3). render()</p>
 <p>​                            (4). componentDidMount()</p>
-<p>​           **2.更新阶段: ** 由组件内部this.setSate()或父组件重新render触发</p>
+<p>​           <strong>2.更新阶段:</strong> 由组件内部this.setSate()或父组件重新render触发</p>
 <p>​                            (1).getDerivedStateFromProps</p>
 <p>​                            (2). shouldComponentUpdate()</p>
 <p>​                            (3). render()</p>
 <p>​                            (4). getSnapshotBeforeUpdate</p>
 <p>​                            (5). componentDidUpdate()</p>
-<p>​           **3.卸载组件: ** 由ReactDOM.unmountComponentAtNode()触发</p>
+<p>​           <strong>3.卸载组件:</strong> 由ReactDOM.unmountComponentAtNode()触发</p>
 <p>​                            (1). componentWillUnmount()</p>
 
                 

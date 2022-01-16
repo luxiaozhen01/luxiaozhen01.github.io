@@ -500,12 +500,12 @@
 <p>​                                    <strong>}</strong></p>
 <h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><h4 id="理解-2"><a href="#理解-2" class="headerlink" title="理解"></a>理解</h4><p>​                      组件内的标签可以定义ref属性来标识自己</p>
 <h4 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h4><p>​                    1.字符串形式的ref         </p>
-<p>​                                    <strong><input ref="input1"/></strong>                </p>
+<p>​                                    <strong>&lt; input ref=”input1”/ &gt;</strong>                </p>
 <p>​                    2.回调形式的ref</p>
 <p>​                                    <strong>&lt;input ref={(c)=&gt;{this.input1 = c}}/&gt;</strong>        </p>
 <p>​                    3.create创建ref容器</p>
 <p>​                                    <strong>myRef = React.createRef()</strong></p>
-<p>​                                    <strong><input ref={this.myRef}/></strong>        </p>
+<p>​                                    <strong>&lt; input ref={this.myRef}/ &gt;</strong>        </p>
 <h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>​        1. 通过onXxx属性指定事件处理函数(注意大小写)</p>
 <p>​                （1) React使用的是自定义(合成)事件, 而不是使用的原生DOM事件</p>
 <p>​                （2) React中的事件是通过事件委托方式处理的(委托给组件最外层的元素)</p>
