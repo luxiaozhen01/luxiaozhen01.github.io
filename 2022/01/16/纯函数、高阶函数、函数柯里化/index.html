@@ -445,7 +445,19 @@
 <p>​             3. 作用: 能实现更加动态, 更加可扩展的功能</p>
 <h5 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h5><p>​            函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。 </p>
 <p>​          </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function sum(a)&#123;</span><br><span class="line"></span><br><span class="line">          return  (b)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">                  return  (c)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">                         return a+b+c</span><br><span class="line"></span><br><span class="line">                         &#125;</span><br><span class="line"></span><br><span class="line">                  &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">function sum(a)&#123;
+
+          return  (b)&#x3D;&gt;&#123;
+
+                  return  (c)&#x3D;&gt;&#123;
+
+                         return a+b+c
+
+                         &#125;
+
+                  &#125;
+
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
