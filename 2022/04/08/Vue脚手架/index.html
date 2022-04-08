@@ -4,11 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue2, Norther">
-    <meta name="description" content="基础语法初始Vue1.想让Vue工作，就必须创建一个Vue实例，且要传入一个配置对象；
-2.root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法；
-3.root容器里的代码被称为【Vue模板】；
-4.Vue实例和容器是">
+    <meta name="keywords" content="Vue2脚手架, Norther">
+    <meta name="description" content="脚手架文件结构   ├── node_modules 
+├── public
+│   ├── favicon.ico: 页签图标
+│   └── index.html: 主页面
+├── src
+│   ├── assets: 存放静态资源
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue2 | Norther</title>
+    <title>Vue2脚手架 | Norther</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -268,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue2</h1>
+                    <h1 class="description center-align post-title">Vue2脚手架</h1>
                 </div>
             </div>
         </div>
@@ -438,270 +441,484 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h3 id="初始Vue"><a href="#初始Vue" class="headerlink" title="初始Vue"></a>初始Vue</h3><p>1.想让Vue工作，就必须创建一个Vue实例，且要传入一个配置对象；</p>
-<p>2.root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法；</p>
-<p>3.root容器里的代码被称为【Vue模板】；</p>
-<p>4.Vue实例和容器是一一对应的；</p>
-<p>5.真实开发中只有一个Vue实例，并且会配合着组件一起使用；</p>
-<p>6.中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性；</p>
-<p>7.一旦data中的数据发生改变，那么页面中用到该数据的地方也会自动更新；</p>
-<p><span style="color:red;"><strong>注意区分：js表达式 和 js代码(语句)</strong></span></p>
-<p>​       1.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方：</p>
-<p>​            (1). a</p>
-<p>​            (2). a+b</p>
-<p>​            (3). demo(1)</p>
-<p>​            (4). x === y ? ‘a’ : ‘b’</p>
-<p>2.js代码(语句)</p>
-<p>​            (1). if(){}</p>
-<p>​            (2). for(){}</p>
-<h3 id="Vue的模板语法"><a href="#Vue的模板语法" class="headerlink" title="Vue的模板语法"></a><strong>Vue的模板语法</strong></h3><p><em><strong>Vue模板语法有2大类：</strong></em></p>
-<p>​     <strong>1.插值语法：</strong></p>
-<p>​       功能：用于解析标签体内容。</p>
-<p>​       写法：，xxx是js表达式，且可以直接读取到data中的所有属性。</p>
-<p>​     <strong>2.指令语法：</strong></p>
-<p>​       功能：用于解析标签（包括：标签属性、标签体内容、绑定事件…..）。</p>
-<p>​       举例：v-bind:href=”xxx” 或  简写为 :href=”xxx”，xxx同样要写js表达式,且可以直接读取到data中的所有属性。</p>
-<p>​       备注：Vue中有很多的指令，且形式都是：v-????，此处我们只是拿v-bind举个例子。</p>
-<h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a><strong>数据绑定</strong></h3><p><strong>Vue中有2种数据绑定的方式：</strong></p>
-<p>​       1.单向绑定(v-bind)：数据只能从data流向页面。</p>
-<p>​       2.双向绑定(v-model)：数据不仅能从data流向页面，还可以从页面流向data。</p>
-<p>​     备注：</p>
-<p>​       1.双向绑定一般都应用在表单类元素上（如：input、select等）</p>
-<p>​       2.v-model:value 可以简写为 v-model，因为v-model默认收集的就是value值。</p>
-<h3 id="data与el的两种写法"><a href="#data与el的两种写法" class="headerlink" title="data与el的两种写法"></a><strong>data与el的两种写法</strong></h3><p><em><strong>data与el的2种写法</strong></em></p>
-<p>​      <strong>1.el有2种写法</strong></p>
-<p>​        (1).new Vue时候配置el属性。</p>
-<p>​        (2).先创建Vue实例，随后再通过vm.$mount(‘#root’)指定el的值。</p>
-<p>​      <strong>2.data有2种写法</strong></p>
-<p>​        (1).对象式</p>
-<p>​        (2).函数式</p>
-<p>​        如何选择：目前哪种写法都可以，以后学习到组件时，data必须使用函数式，否则会报错。</p>
-<p>​      <strong>3.一个重要的原则：</strong></p>
-<p>​        由Vue管理的函数，一定不要写箭头函数，一旦写了箭头函数，this就不再是Vue实例了。</p>
-<h3 id="MVVM模型"><a href="#MVVM模型" class="headerlink" title="MVVM模型"></a><strong>MVVM模型</strong></h3><p>​        1. M：模型(Model) ：data中的数据</p>
-<p>​        2. V：视图(View) ：模板代码</p>
-<p>​        3. VM：视图模型(ViewModel)：Vue实例</p>
-<p>​     观察发现：</p>
-<p>​        1.data中所有的属性，最后都出现在了vm身上。</p>
-<p>​        2.vm身上所有的属性 及 Vue原型上所有属性，在Vue模板中都可以直接使用。</p>
-<h3 id="数据代理"><a href="#数据代理" class="headerlink" title="数据代理"></a><strong>数据代理</strong></h3><p><strong>1.Vue中的数据代理：</strong>通过vm对象来代理data对象中属性的操作（读/写）</p>
-<p><strong>2.Vue中数据代理的好处：</strong>更加方便的操作data中的数据</p>
-<p><strong>3.基本原理：</strong></p>
-<p>​         通过Object.defineProperty()把data对象中所有属性添加到vm上。</p>
-<p>​         为每一个添加到vm上的属性，都指定一个getter/setter。</p>
-<p>​         在getter/setter内部去操作（读/写）data中对应的属性。</p>
-<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a><strong>事件处理</strong></h3><p><strong>事件的基本使用：</strong></p>
-<p>​      1.使用v-on:xxx 或 @xxx 绑定事件，其中xxx是事件名；</p>
-<p>​      2.事件的回调需要配置在methods对象中，最终会在vm上；</p>
-<p>​      3.methods中配置的函数，不要用箭头函数！否则this就不是vm了；</p>
-<p>​      4.methods中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；</p>
-<p>​      5.@click=”demo” 和 @click=”demo($event)” 效果一致，但后者可以传参；</p>
-<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a><strong>事件修饰符</strong></h3><p>​      1.prevent：阻止默认事件（常用）；（js原生阻止默认事件event.preventDefault）</p>
-<p>​      2.stop：阻止事件冒泡（常用）；(js原生阻止事件冒泡event.stopPropagation)</p>
-<p>​      3.once：事件只触发一次（常用）；</p>
-<p>​      4.capture：使用事件的捕获模式,加在外部事件上；</p>
-<p>​      5.self：只有event.target是当前操作的元素时才触发事件；</p>
-<p>​      6.passive：事件的默认行为立即执行，无需等待事件回调执行完毕；</p>
-<p>​       7.事件修饰符可以连续写  @click.prevent.stop= “demo”</p>
-<h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a><strong>键盘事件</strong></h3><p>1.Vue中常用的按键别名：</p>
-<p>​         回车 =&gt; enter</p>
-<p>​         删除 =&gt; delete (捕获“删除”和“退格”键)</p>
-<p>​         退出 =&gt; esc</p>
-<p>​         空格 =&gt; space</p>
-<p>​         换行 =&gt; tab (特殊，必须配合keydown去使用)</p>
-<p>​         上 =&gt; up</p>
-<p>​         下 =&gt; down</p>
-<p>​         左 =&gt; left</p>
-<p>​         右 =&gt; right</p>
-<p>   2.Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要转为kebab-case（短横线命名）</p>
-<p>   3.系统修饰键（用法特殊）：ctrl、alt、shift、meta</p>
-<p>​       (1).配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。</p>
-<p>​       (2).配合keydown使用：正常触发事件。</p>
-<p> 4.也可以使用keyCode去指定具体的按键（不推荐）</p>
-<p>5.Vue.config.keyCodes.自定义键名 = 键码，可以去定制按键别名</p>
-<p>6.可以组合指定比如：@keyup.ctrl.y 按下ctrl+y才会触发</p>
-<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a><strong>计算属性</strong></h3><p>​     <strong>1.定义：</strong>要用的属性不存在，要通过已有属性计算得来。</p>
-<p>​     <strong>2.原理：</strong>底层借助了Objcet.defineproperty方法提供的getter和setter。</p>
-<p>​     <strong>3.get函数什么时候执行？</strong></p>
-<p>​         (1).初次读取时会执行一次。</p>
-<p>​         (2).当依赖的数据发生改变时会被再次调用。</p>
-<p>​     <strong>4.优势：</strong>与methods实现相比，内部有缓存机制（复用），效率更高，调试方便。</p>
-<p>​     <strong>5.备注：</strong></p>
-<p>​      (1).计算属性最终会出现在vm上，直接读取使用即可。</p>
-<p>​       (2).如果计算属性要被修改，那必须写set函数去响应修改，且set中要引起计算时依赖的数据发生改变。</p>
-<h3 id="监视属性"><a href="#监视属性" class="headerlink" title="监视属性"></a><strong>监视属性</strong></h3><p><strong>监视属性watch：</strong></p>
-<p>​     1.当被监视的属性变化时, 回调函数自动调用, 进行相关操作</p>
-<p>​     2.监视的属性必须存在，才能进行监视！！</p>
-<p>​     3.监视的两种写法：</p>
-<p>​         (1).new Vue时传入watch配置</p>
-<p>​         (2).通过vm.$watch监视</p>
-<p><strong>深度监视：</strong></p>
-<p>​      (1).Vue中的watch默认不监测对象内部值的改变（一层）。</p>
-<p>​      (2).配置deep:true可以监测对象内部值改变（多层）。</p>
-<p> <strong>备注：</strong></p>
-<p>​      (1).Vue自身可以监测对象内部值的改变，但Vue提供的watch默认不可以！</p>
-<p>​      (2).使用watch时根据数据的具体结构，决定是否采用深度监视。</p>
-<p> <strong>配置项：</strong></p>
-<p>​       immediate     让监视属性初始化时调用一下</p>
-<p>​       deep  开启深度监视</p>
-<h3 id="computed与watch之间的区别"><a href="#computed与watch之间的区别" class="headerlink" title="computed与watch之间的区别"></a><strong>computed与watch之间的区别</strong></h3><p><strong>computed和watch之间的区别：</strong></p>
-<p>​       1.computed能完成的功能，watch都可以完成。</p>
-<p>​        2.watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。</p>
-<p><strong>两个重要的小原则：</strong></p>
-<p>​       1.所被Vue管理的函数，最好写成普通函数，这样this的指向才是vm 或 组件实例对象。</p>
-<p>​       2.所有不被Vue所管理的函数（定时器的回调函数、ajax的回调函数等、Promise的回调函数），最好写成箭头函数，这样this的指向才是vm 或 组件实例对象。</p>
-<p>​    </p>
-<h3 id="绑定样式"><a href="#绑定样式" class="headerlink" title="绑定样式"></a><strong>绑定样式</strong></h3><p>​      <strong>1. class样式</strong></p>
-<p>​        写法:class=”xxx” xxx可以是字符串、对象、数组。</p>
-<p>​            字符串写法适用于：类名不确定，要动态获取。</p>
-<p>​            对象写法适用于：要绑定多个样式，个数不确定，名字也不确定。</p>
-<p>​            数组写法适用于：要绑定多个样式，个数确定，名字也确定，但不确定用不用。</p>
-<p>​      <strong>2. style样式</strong></p>
-<p>​        :style=”{fontSize: xxx}”其中xxx是动态值。</p>
-<p>​        :style=”[a,b]”其中a、b是样式对象。</p>
-<h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a><strong>条件渲染</strong></h3><p>​       <strong>1.v-if</strong></p>
-<p>​         写法：</p>
-<p>​          (1).v-if=”表达式” </p>
-<p>​          (2).v-else-if=”表达式”</p>
-<p>​          (3).v-else=”表达式”</p>
-<p>​         适用于：切换频率较低的场景。</p>
-<p>​         特点：不展示的DOM元素直接被移除。</p>
-<p>​         注意：v-if可以和:v-else-if、v-else一起使用，但要求结构不能被“打断”。</p>
-<p>​       <strong>2.v-show</strong></p>
-<p>​         写法：v-show=”表达式”</p>
-<p>​         适用于：切换频率较高的场景。</p>
-<p>​         特点：不展示的DOM元素未被移除，仅仅是使用样式隐藏掉</p>
-<p>​                </p>
-<p>​       <strong>3.备注：</strong>使用v-if的时，元素可能无法获取到，而使用v-show一定可以获取到。</p>
-<p>​            &lt; template &gt;只能和v-if配合使用</p>
-<h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a><strong>列表渲染</strong></h3><p><strong>v-for指令:</strong></p>
-<p>​      1.用于展示列表数据</p>
-<p>​      2.语法：v-for=”(item, index) in xxx” :key=”yyy”</p>
-<p>​      3.可遍历：数组、对象、字符串（用的很少）、指定次数（用的很少）</p>
-<h3 id="Vue监视数据原理"><a href="#Vue监视数据原理" class="headerlink" title="Vue监视数据原理"></a><strong>Vue监视数据原理</strong></h3><ol>
-<li><p>vue会监视data中所有层次的数据。</p>
-</li>
-<li><p>如何监测对象中的数据？</p>
-</li>
-</ol>
-<p>​        通过setter实现监视，且要在new Vue时就传入要监测的数据。</p>
-<p>​         (1).对象中后追加的属性，Vue默认不做响应式处理</p>
-<p>​         (2).如需给后添加的属性做响应式，请使用如下API：</p>
-<p>​              Vue.set(target，propertyName/index，value) 或 </p>
-<p>​              vm.$set(target，propertyName/index，value)</p>
-<ol start="3">
-<li>如何监测数组中的数据？</li>
-</ol>
-<p>​        通过包裹数组更新元素的方法实现，本质就是做了两件事：</p>
-<p>​         (1).调用原生对应的方法对数组进行更新。</p>
-<p>​         (2).重新解析模板，进而更新页面。</p>
-<p>   4.在Vue修改数组中的某个元素一定要用如下方法：</p>
-<p>​        (1).使用这些API:push()、pop()、shift()、unshift()、splice()、sort()、reverse()</p>
-<p>​        (2).Vue.set() 或 vm.$set()</p>
-<p>​    <span style="color:red"> 特别注意：Vue.set() 和 vm.$set() 不能给vm 或 vm的根数据对象 添加属性！！！</span></p>
-<h3 id="收集表单数据"><a href="#收集表单数据" class="headerlink" title="收集表单数据"></a><strong>收集表单数据</strong></h3><p>收集表单数据：</p>
-<p>​    若：&lt; input type=”text”/ &gt;，则v-model收集的是value值，用户输入的就是value值。</p>
-<p>​    若：&lt; input type=”radio”/ &gt;，则v-model收集的是value值，且要给标签配置value值。</p>
-<p>​    若：&lt; input type=”checkbox”/ &gt;</p>
-<p>​       1.没有配置input的value属性，那么收集的就是checked（勾选 or 未勾选，是布尔值）</p>
-<p>​       2.配置input的value属性:</p>
-<p>​         (1)v-model的初始值是非数组，那么收集的就是checked（勾选 or 未勾选，是布尔值）</p>
-<p>​         (2)v-model的初始值是数组，那么收集的的就是value组成的数组</p>
-<p>​    备注：v-model的三个修饰符：</p>
-<p>​         lazy：失去焦点再收集数据</p>
-<p>​         number：输入字符串转为有效的数字</p>
-<p>​         trim：输入首尾空格过滤</p>
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a><strong>过滤器</strong></h3><p> <strong>定义：</strong>对要显示的数据进行特定格式化后再显示（适用于一些简单逻辑的处理）。</p>
-<p>  <strong>语法：</strong></p>
-<p>​      1.注册过滤器：Vue.filter(name,callback) 或 new Vue{filters:{}}</p>
-<p>​      2.使用过滤器：{ { xxx | 过滤器名} }  或  v-bind:属性 = “xxx | 过滤器名”</p>
-<p>​     <strong>备注：</strong></p>
-<p>​       1.过滤器也可以接收额外参数、多个过滤器也可以串联</p>
-<p>​      2.并没有改变原本的数据, 是产生新的对应的数据</p>
-<h3 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a><strong>内置指令</strong></h3><p>  <strong>v-bind</strong> : 单向绑定解析表达式, 可简写为 :xxx</p>
-<p>​        <strong>v-model</strong> : 双向数据绑定</p>
-<p>​        <strong>v-for</strong>  : 遍历数组/对象/字符串</p>
-<p>​        <strong>v-on</strong>   : 绑定事件监听, 可简写为@</p>
-<p>​        <strong>v-if</strong>     : 条件渲染（动态控制节点是否存存在）</p>
-<p>​        <strong>v-else</strong>  : 条件渲染（动态控制节点是否存存在）</p>
-<p>​        <strong>v-show</strong>  : 条件渲染 (动态控制节点是否展示)</p>
-<p>​       <strong>v-text</strong>指令：</p>
-<p>​          1.作用：向其所在的节点中渲染文本内容。</p>
-<p>​          2.与插值语法的区别：v-text会替换掉节点中的内容，则不会。</p>
-<p>​        <strong>v-html</strong>指令：</p>
-<p>​          1.作用：向指定节点中渲染包含html结构的内容。</p>
-<p>​          2.与插值语法的区别：</p>
-<p>​            (1).v-html会替换掉节点中所有的内容，则不会。</p>
-<p>​            (2).v-html可以识别html结构。</p>
-<p>​         <span style="color:red"> 3.严重注意：v-html有安全性问题！！！！</span></p>
-<p>​            (1).在网站上动态渲染任意HTML是非常危险的，容易导致XSS攻击。</p>
-<p>​            (2).一定要在可信的内容上使用v-html，永不要用在用户提交的内容上！</p>
-<p><strong>v-cloak</strong>指令（没有值）：</p>
-<p>​          1.本质是一个特殊属性，Vue实例创建完毕并接管容器后，会删掉v-cloak属性。</p>
-<p>​          2.使用css配合v-cloak可以解决网速慢时页面展示出的问题。</p>
-<p><strong>v-once</strong>指令：</p>
-<p>​          1.v-once所在节点在初次动态渲染后，就视为静态内容了。</p>
-<p>​          2.以后数据的改变不会引起v-once所在结构的更新，可以用于优化性能。</p>
-<p><strong>v-pre</strong>指令：</p>
-<p>​          1.跳过其所在节点的编译过程。</p>
-<p>​          2.可利用它跳过：没有使用指令语法、没有使用插值语法的节点，会加快编译。</p>
-<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a><strong>自定义指令</strong></h3><p> <strong>一、定义语法：</strong></p>
-<p>​     (1).局部指令：</p>
-<p>​       </p>
-<pre class="line-numbers language-none"><code class="language-none">new Vue(&#123;
-	directives:&#123;指令名: 配置对象&#125;
-&#125;)
-或
-new Vue(&#123;
-	directives:&#123;指令名: 回调函数&#125;
-&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h3 id="脚手架文件结构"><a href="#脚手架文件结构" class="headerlink" title="脚手架文件结构"></a>脚手架文件结构</h3><pre class="line-numbers language-none"><code class="language-none">   ├── node_modules 
+├── public
+│   ├── favicon.ico: 页签图标
+│   └── index.html: 主页面
+├── src
+│   ├── assets: 存放静态资源
+│   │   └── logo.png
+│   │── component: 存放组件
+│   │   └── HelloWorld.vue
+│   │── App.vue: 汇总所有组件
+│   │── main.js: 入口文件
+├── .gitignore: git版本管制忽略的配置
+├── babel.config.js: babel的配置文件
+├── package.json: 应用包配置文件 
+├── README.md: 应用描述文件
+├── package-lock.json：包版本控制文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>​     (2).全局指令：</p>
-<p>​       Vue.directive(指令名,配置对象) 或  Vue.directive(指令名,回调函数)</p>
-<p><strong>二、配置对象中常用的3个回调：</strong></p>
-<p>​     (1).bind：指令与元素成功绑定时调用。</p>
-<p>​     (2).inserted：指令所在元素被插入页面时调用。</p>
-<p>​     (3).update：指令所在模板结构被重新解析时调用。</p>
-<p>​     </p>
-<p>​     <strong>三、备注：</strong></p>
-<p>​      1.指令定义时不加v-，但使用时要加v-；</p>
-<p>​      2.指令名如果是多个单词，要使用kebab-case命名方式，不要用camelCase命名。</p>
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a><strong>生命周期</strong></h3><p><img src="2022/04/08/vue2/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="生命周期图"></p>
-<p> 1.又名：生命周期回调函数、生命周期函数、生命周期钩子。</p>
-<p>​     2.是什么：Vue在关键时刻帮我们调用的一些特殊名称的函数。</p>
-<p>​      3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的。</p>
-<p>​     4.生命周期函数中的this指向是vm 或 组件实例对象。</p>
-<p>常用的生命周期钩子：</p>
-<p>​     1.mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】。</p>
-<p>​     2.beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】。</p>
-<p>   关于销毁Vue实例</p>
-<p>​     1.销毁后借助Vue开发者工具看不到任何信息。</p>
-<p>​     2.销毁后自定义事件会失效，但原生DOM事件依然有效。</p>
-<p>​     3.一般不会在beforeDestroy操作数据，因为即便操作数据，也不会再触发更新流程了。</p>
-<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a><strong>组件</strong></h3><p><em><strong>Vue中使用组件的三大步骤：</strong></em></p>
-<p>​        一、定义组件(创建组件)</p>
-<p>​        二、注册组件</p>
-<p>​        三、使用组件(写组件标签)</p>
-<p>​      <strong>一、如何定义一个组件？</strong></p>
-<p>​         使用Vue.extend(options)创建，其中options和new Vue(options)时传入的那个options几乎一样，但也有点区别；区别如下：</p>
-<p>​          1.el不要写，为什么？ ——— 最终所有的组件都要经过一个vm的管理，由vm中的el决定服务哪个容器。</p>
-<p>​          2.data必须写成函数，为什么？ ———— 避免组件被复用时，数据存在引用关系。</p>
-<p>​          备注：使用template可以配置组件结构。</p>
-<p>​       <strong>二、如何注册组件？</strong></p>
-<p>​          1.局部注册：靠new Vue的时候传入components选项</p>
-<p>​          2.全局注册：靠Vue.component(‘组件名’,组件)</p>
-<p>​       三、编写组件标签：  &lt; school &gt;&lt; /school &gt;</p>
-<p><span style="color:red">关于VueComponent：</span></p>
-<p>​      1.school组件本质是一个名为VueComponent的构造函数，且不是程序员定义的，是Vue.extend生成的。</p>
-<p>​      2.我们只需要写&lt; school/ &gt;或&lt; school &gt;&lt; /school &gt;，Vue解析时会帮我们创建school组件的实例对象，即Vue帮我们执行的：new VueComponent(options)。</p>
-<p>​    3.特别注意：每次调用Vue.extend，返回的都是一个全新的VueComponent！！！！</p>
-<p>​      4.关于this指向：</p>
-<p>​        (1).组件配置中：data函数、methods中的函数、watch中的函数、computed中的函数 它们的this均是【VueComponent实例对象】。</p>
-<p>​        (2).new Vue(options)配置中：data函数、methods中的函数、watch中的函数、computed中的函数 它们的this均是【Vue实例对象】。</p>
-<p>5.VueComponent的实例对象，以后简称vc（也可称之为：组件实例对象）。Vue的实例对象，以后简称vm。</p>
-<p><strong>重要内置关系</strong>：</p>
-<p>   1.一个重要的内置关系：VueComponent.prototype. _ _ proto _ _ === Vue.prototype</p>
-<p>​     2.为什么要有这个关系：让组件实例对象（vc）可以访问到 Vue原型上的属性、方法。</p>
+<h3 id="关于不同版本的Vue"><a href="#关于不同版本的Vue" class="headerlink" title="关于不同版本的Vue"></a><strong>关于不同版本的Vue</strong></h3><ol>
+<li>vue.js与vue.runtime.xxx.js的区别：</li>
+</ol>
+<p>​       （1）. vue.js是完整版的Vue，包含：核心功能 + 模板解析器。</p>
+<p>​       （2）. vue.runtime.xxx.js是运行版的Vue，只包含：核心功能；没有模板解析器。</p>
+<ol start="2">
+<li>因为vue.runtime.xxx.js没有模板解析器，所以不能使用template这个配置项，需要使用render函数接收到的createElement函数去指定具体内容。</li>
+</ol>
+<h3 id="vue-config-js配置文件"><a href="#vue-config-js配置文件" class="headerlink" title="vue.config.js配置文件"></a><strong>vue.config.js配置文件</strong></h3><ol>
+<li><p>使用vue inspect &gt; output.js可以查看到Vue脚手架的默认配置。</p>
+</li>
+<li><p>使用vue.config.js可以对脚手架进行个性化定制，详情见：<a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh">https://cli.vuejs.org/zh</a></p>
+</li>
+</ol>
+<h3 id="ref属性"><a href="#ref属性" class="headerlink" title="ref属性"></a><strong>ref属性</strong></h3><ol>
+<li><p>被用来给元素或子组件注册引用信息（id的替代者）</p>
+</li>
+<li><p>应用在html标签上获取的是真实DOM元素，应用在组件标签上是组件实例对象（vc）</p>
+</li>
+<li><p>使用方式：</p>
+</li>
+</ol>
+<p>​        （1）. 打标识：<code>&lt;h1 ref=&quot;xxx&quot;&gt;.....&lt;/h1&gt;</code> 或 <code>&lt;School ref=&quot;xxx&quot;&gt;&lt;/School&gt;</code></p>
+<p>​        （2）. 获取：<code>this.$refs.xxx</code></p>
+<h3 id="props配置项"><a href="#props配置项" class="headerlink" title="props配置项"></a><strong>props配置项</strong></h3><ol>
+<li><p>功能：让组件接收外部传过来的数据</p>
+</li>
+<li><p>传递数据：<code>&lt;Demo name=&quot;xxx&quot;/&gt;</code></p>
+</li>
+<li><p>接收数据：</p>
+</li>
+</ol>
+<p>(1). 第一种方式（只接收）：<code>props:[&#39;name&#39;] </code></p>
+<p>(2). 第二种方式（限制类型）：<code>props:&#123;name:String&#125;</code></p>
+<p>(3). 第三种方式（限制类型、限制必要性、指定默认值）：</p>
+<pre class="line-numbers language-none"><code class="language-none">   \&#96;&#96;&#96;js
+
+​    props:&#123;
+
+​      name:&#123;
+
+​        type:String, &#x2F;&#x2F;类型
+
+​        required:true, &#x2F;&#x2F;必要性
+
+​        default:&#39;老王&#39; &#x2F;&#x2F;默认值
+
+​      &#125;
+
+​    &#125;
+
+​    \&#96;&#96;&#96; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p> &gt; 备注：props是只读的，Vue底层会监测你对props的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，那么请复制props的内容到data中一份，然后去修改data中的数据。</p>
+<h3 id="mixin-混入"><a href="#mixin-混入" class="headerlink" title="mixin(混入)"></a><strong>mixin(混入)</strong></h3><ol>
+<li><p>功能：可以把多个组件共用的配置提取成一个混入对象</p>
+</li>
+<li><p>使用方式：</p>
+</li>
+</ol>
+<p>​    <strong>第一步定义混合：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none"> \&#96;&#96;&#96;
+
+  &#123;
+
+​    data()&#123;....&#125;,
+
+​    methods:&#123;....&#125;
+
+​    ....
+
+  &#125;
+
+  \&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>第二步使用混入：</strong></p>
+<p>   全局混入：<code>Vue.mixin(xxx)</code></p>
+<p>   局部混入：<code>mixins:[&#39;xxx&#39;]  </code></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ol>
+<li><p>功能：用于增强Vue</p>
+</li>
+<li><p>本质：包含install方法的一个对象，install的第一个参数是Vue，第二个以后的参数是插件使用者传递的数据。</p>
+</li>
+<li><p>定义插件：</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">  \&#96;&#96;&#96;js
+
+  对象.install &#x3D; function (Vue, options) &#123;
+
+​    &#x2F;&#x2F; 1. 添加全局过滤器
+
+​    Vue.filter(....)
+
+
+​    &#x2F;&#x2F; 2. 添加全局指令
+
+​    Vue.directive(....)
+
+
+​    &#x2F;&#x2F; 3. 配置全局混入(合)
+
+​    Vue.mixin(....)
+
+
+​    &#x2F;&#x2F; 4. 添加实例方法
+
+​    Vue.prototype.$myMethod &#x3D; function () &#123;...&#125;
+
+​    Vue.prototype.$myProperty &#x3D; xxxx
+
+  &#125;
+
+  \&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>使用插件：<code>Vue.use()</code></li>
+</ol>
+<h3 id="scoped样式"><a href="#scoped样式" class="headerlink" title="scoped样式"></a>scoped样式</h3><ol>
+<li><p>作用：让样式在局部生效，防止冲突。</p>
+</li>
+<li><p>写法：<code>&lt;style scoped&gt;</code></p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><ol>
+<li>组件化编码流程：</li>
+</ol>
+<p>(1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。</p>
+<p>(2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：</p>
+<p>  ①.一个组件在用：放在组件自身即可。</p>
+<p>  ②. 一些组件在用：放在他们共同的父组件上（<span style="color:red">状态提升</span>）。</p>
+<p>(3).实现交互：从绑定事件开始。</p>
+<ol start="2">
+<li>props适用于：</li>
+</ol>
+<p>(1).父组件 ==&gt; 子组件 通信</p>
+<p>(2).子组件 ==&gt; 父组件 通信（要求父先给子一个函数）</p>
+<ol start="3">
+<li><p>使用v-model时要切记：v-model绑定的值不能是props传过来的值，因为props是不可以修改的！</p>
+</li>
+<li><p>props传过来的若是对象类型的值，修改对象中的属性时Vue不会报错，但不推荐这样做。</p>
+</li>
+</ol>
+<h3 id="webStorage"><a href="#webStorage" class="headerlink" title="webStorage"></a><strong>webStorage</strong></h3><ol>
+<li><p>存储内容大小一般支持5MB左右（不同浏览器可能还不一样）</p>
+</li>
+<li><p>浏览器端通过 Window.sessionStorage 和 Window.localStorage 属性来实现本地存储机制。</p>
+</li>
+<li><p>相关API：</p>
+</li>
+</ol>
+<p>(1). <code>xxxxxStorage.setItem(&#39;key&#39;, &#39;value&#39;);</code></p>
+<p>​         该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。</p>
+<p>(2). <code>xxxxxStorage.getItem(&#39;person&#39;);</code></p>
+<p>该方法接受一个键名作为参数，返回键名对应的值。</p>
+<p>(3). <code>xxxxxStorage.removeItem(&#39;key&#39;);</code></p>
+<p> 该方法接受一个键名作为参数，并把该键名从存储中删除。</p>
+<p> (4). <code> xxxxxStorage.clear()</code></p>
+<p>该方法会清空存储中的所有数据。</p>
+<ol start="4">
+<li>备注：</li>
+</ol>
+<p>  (1). SessionStorage存储的内容会随着浏览器窗口关闭而消失。</p>
+<p>  (2). LocalStorage存储的内容，需要手动清除才会消失。</p>
+<p>  (3). <code>xxxxxStorage.getItem(xxx)</code>如果xxx对应的value获取不到，那么getItem的返回值是null。</p>
+<p>  (4). <code>JSON.parse(null)</code>的结果依然是null。</p>
+<h3 id="组件的自定义事件"><a href="#组件的自定义事件" class="headerlink" title="组件的自定义事件"></a><strong>组件的自定义事件</strong></h3><ol>
+<li><p>一种组件间通信的方式，适用于：<strong style="color:red">子组件 ===&gt; 父组件</strong></p>
+</li>
+<li><p>使用场景：A是父组件，B是子组件，B想给A传数据，那么就要在A中给B绑定自定义事件（<span style="color:red">事件的回调在A中</span>）。</p>
+</li>
+<li><p>绑定自定义事件：</p>
+</li>
+</ol>
+<p>  (1). 第一种方式，在父组件中：<code>&lt;Demo @atguigu=&quot;test&quot;/&gt;</code>  或 <code>&lt;Demo v-on:atguigu=&quot;test&quot;/&gt;</code></p>
+<p>  (2). 第二种方式，在父组件中：</p>
+<pre class="line-numbers language-none"><code class="language-none">  \&#96;&#96;&#96;js
+
+​    &lt;Demo ref&#x3D;&quot;demo&quot;&#x2F;&gt;
+
+​    ......
+
+​    mounted()&#123;
+
+​      this.$refs.xxx.$on(&#39;atguigu&#39;,this.test)
+
+​    &#125;
+
+​    \&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  (3). 若想让自定义事件只能触发一次，可以使用<code>once</code>修饰符，或<code>$once</code>方法。</p>
+<p>(4). 触发自定义事件：<code>this.$emit(&#39;atguigu&#39;,数据)</code>   </p>
+<p>(5). 解绑自定义事件<code>this.$off(&#39;atguigu&#39;)</code></p>
+<p>(6). 组件上也可以绑定原生DOM事件，需要使用<code>native</code>修饰符。</p>
+<p>(7). 注意：通过<code>this.$refs.xxx.$on(&#39;atguigu&#39;,回调)</code>绑定自定义事件时，回调<span style="color:red">要么配置在methods中</span>，<span style="color:red">要么用箭头函数</span>，否则this指向会出问题！</p>
+<h3 id="全局事件总线（GlobalEventBus）"><a href="#全局事件总线（GlobalEventBus）" class="headerlink" title="全局事件总线（GlobalEventBus）"></a><strong>全局事件总线（GlobalEventBus）</strong></h3><ol>
+<li><p>一种组件间通信的方式，适用于<span style="color:red">任意组件间通信</span>。</p>
+</li>
+<li><p>安装全局事件总线：</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none"> \&#96;&#96;&#96;js
+
+  new Vue(&#123;
+
+   ......
+
+   beforeCreate() &#123;
+
+​     Vue.prototype.$bus &#x3D; this &#x2F;&#x2F;安装全局事件总线，$bus就是当前应用的vm
+
+   &#125;,
+
+​    ......
+
+  &#125;) 
+
+  \&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>使用事件总线：</li>
+</ol>
+<p>  (1). 接收数据：A组件想接收数据，则在A组件中给$bus绑定自定义事件，事件的<span style="color:red">回调留在A组件自身。</span></p>
+<pre class="line-numbers language-none"><code class="language-none">   \&#96;&#96;&#96;js
+
+   methods()&#123;
+
+​    demo(data)&#123;......&#125;
+
+   &#125;
+
+   ......
+
+   mounted() &#123;
+
+​    this.$bus.$on(&#39;xxxx&#39;,this.demo)
+
+   &#125;
+
+   \&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  (2). 提供数据：<code>this.$bus.$emit(&#39;xxxx&#39;,数据)</code></p>
+<ol start="4">
+<li>最好在beforeDestroy钩子中，用$off去解绑<span style="color:red">当前组件所用到的</span>事件。</li>
+</ol>
+<h3 id="消息订阅与发布（pubsub）"><a href="#消息订阅与发布（pubsub）" class="headerlink" title="消息订阅与发布（pubsub）"></a><strong>消息订阅与发布（pubsub）</strong></h3><ol>
+<li><p>一种组件间通信的方式，适用于<span style="color:red">任意组件间通信</span>。</p>
+</li>
+<li><p>使用步骤：</p>
+</li>
+</ol>
+<p>  (1). 安装pubsub：<code>npm i pubsub-js</code></p>
+<p>  (2). 引入: <code>import pubsub from &#39;pubsub-js&#39;</code></p>
+<p>  (3). 接收数据：A组件想接收数据，则在A组件中订阅消息，订阅的<span style="color:red">回调留在A组件自身。</span></p>
+<pre class="line-numbers language-none"><code class="language-none">  \&#96;&#96;&#96;js
+
+   methods()&#123;
+
+​    demo(data)&#123;......&#125;
+
+   &#125;
+
+   ......
+
+   mounted() &#123;
+
+​    this.pid &#x3D; pubsub.subscribe(&#39;xxx&#39;,this.demo) &#x2F;&#x2F;订阅消息
+
+   &#125;
+
+   \&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  (4). 提供数据：<code>pubsub.publish(&#39;xxx&#39;,数据)</code></p>
+<p>  (5). 最好在beforeDestroy钩子中，用<code>PubSub.unsubscribe(pid)</code>去<span style="color:red">取消订阅。</span></p>
+<h3 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a><strong>nextTick</strong></h3><ol>
+<li><p>语法：<code>this.$nextTick(回调函数)</code></p>
+</li>
+<li><p>作用：在下一次 DOM 更新结束后执行其指定的回调。</p>
+</li>
+<li><p>什么时候用：当改变数据后，要基于更新后的新DOM进行某些操作时，要在nextTick所指定的回调函数中执行。</p>
+</li>
+</ol>
+<h3 id="Vue封装的过渡与动画"><a href="#Vue封装的过渡与动画" class="headerlink" title="Vue封装的过渡与动画"></a><strong>Vue封装的过渡与动画</strong></h3><ol>
+<li>作用：在插入、更新或移除 DOM元素时，在合适的时候给元素添加样式类名。</li>
+</ol>
+<p>2.写法：</p>
+<p>  (1). 准备好样式：</p>
+<p>   - 元素进入的样式：</p>
+<p>​    ①. v-enter：进入的起点</p>
+<p>​    ②. v-enter-active：进入过程中</p>
+<p>​    ③. v-enter-to：进入的终点</p>
+<p>   - 元素离开的样式：</p>
+<p>​    ①. v-leave：离开的起点</p>
+<p>​    ②. v-leave-active：离开过程中</p>
+<p>​    ③. v-leave-to：离开的终点</p>
+<p>  (2). 使用<code>&lt;transition&gt;</code>包裹要过度的元素，并配置name属性：</p>
+<pre class="line-numbers language-none"><code class="language-none">   \&#96;&#96;&#96;vue
+
+   &lt;transition name&#x3D;&quot;hello&quot;&gt;
+
+​     &lt;h1 v-show&#x3D;&quot;isShow&quot;&gt;你好啊！&lt;&#x2F;h1&gt;
+
+   &lt;&#x2F;transition&gt;
+
+   \&#96;&#96;&#96;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  (3). 备注：若有多个元素需要过度，则需要使用：<code>&lt;transition-group&gt;</code>，且每个元素都要指定<code>key</code>值。</p>
+<h3 id="vue脚手架配置代理"><a href="#vue脚手架配置代理" class="headerlink" title="vue脚手架配置代理"></a><strong>vue脚手架配置代理</strong></h3><p><strong>方法一</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">  在vue.config.js中添加如下配置：
+
+\&#96;&#96;&#96;js
+
+devServer:&#123;
+
+ proxy:&quot;http:&#x2F;&#x2F;localhost:5000&quot;
+
+&#125;
+
+\&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>说明：</p>
+<p>(1). 优点：配置简单，请求资源时直接发给前端（8080）即可。</p>
+<p>(2). 缺点：不能配置多个代理，不能灵活的控制请求是否走代理。</p>
+<p>(3). 工作方式：若按照上述配置代理，当请求了前端不存在的资源时，那么该请求会转发给服务器 （优先匹配前端资源）</p>
+<p><strong>方法二</strong></p>
+<p>  编写vue.config.js配置具体代理规则：</p>
+<pre class="line-numbers language-none"><code class="language-none">\&#96;&#96;&#96;js
+
+module.exports &#x3D; &#123;
+
+  devServer: &#123;
+
+   proxy: &#123;
+
+   &#39;&#x2F;api1&#39;: &#123;&#x2F;&#x2F; 匹配所有以 &#39;&#x2F;api1&#39;开头的请求路径
+
+​    target: &#39;http:&#x2F;&#x2F;localhost:5000&#39;,&#x2F;&#x2F; 代理目标的基础路径
+
+​    changeOrigin: true,
+
+​    pathRewrite: &#123;&#39;^&#x2F;api1&#39;: &#39;&#39;&#125;
+
+   &#125;,
+
+   &#39;&#x2F;api2&#39;: &#123;&#x2F;&#x2F; 匹配所有以 &#39;&#x2F;api2&#39;开头的请求路径
+
+​    target: &#39;http:&#x2F;&#x2F;localhost:5001&#39;,&#x2F;&#x2F; 代理目标的基础路径
+
+​    changeOrigin: true,
+
+​    pathRewrite: &#123;&#39;^&#x2F;api2&#39;: &#39;&#39;&#125;
+
+   &#125;
+
+  &#125;
+
+ &#125;
+
+&#125;
+
+&#x2F;*
+
+  changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000
+
+  changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:8080
+
+  changeOrigin默认值为true
+
+*&#x2F;
+
+\&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>说明：</p>
+<p>(1). 优点：可以配置多个代理，且可以灵活的控制请求是否走代理。</p>
+<p>(2). 缺点：配置略微繁琐，请求资源时必须加前缀。</p>
+<h3 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a><strong>插槽</strong></h3><ol>
+<li><p>作用：让父组件可以向子组件指定位置插入html结构，也是一种组件间通信的方式，适用于 <strong style="color:red">父组件 ===&gt; 子组件</strong> 。</p>
+</li>
+<li><p>分类：默认插槽、具名插槽、作用域插槽</p>
+</li>
+<li><p>使用方式：</p>
+<p>(1). 默认插槽：</p>
+</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">
+
+&#96;&#96;&#96;vue
+      父组件中：
+              &lt;Category&gt;
+                 &lt;div&gt;html结构1&lt;&#x2F;div&gt;
+              &lt;&#x2F;Category&gt;
+      子组件中：
+              &lt;template&gt;
+                  &lt;div&gt;
+                     &lt;!-- 定义插槽 --&gt;
+                     &lt;slot&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+                  &lt;&#x2F;div&gt;
+              &lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(2). 具名插槽：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">父组件中：
+        &lt;Category&gt;
+            &lt;template slot&#x3D;&quot;center&quot;&gt;
+              &lt;div&gt;html结构1&lt;&#x2F;div&gt;
+            &lt;&#x2F;template&gt;
+
+            &lt;template v-slot:footer&gt;
+               &lt;div&gt;html结构2&lt;&#x2F;div&gt;
+            &lt;&#x2F;template&gt;
+        &lt;&#x2F;Category&gt;
+子组件中：
+        &lt;template&gt;
+            &lt;div&gt;
+               &lt;!-- 定义插槽 --&gt;
+               &lt;slot name&#x3D;&quot;center&quot;&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+               &lt;slot name&#x3D;&quot;footer&quot;&gt;插槽默认内容...&lt;&#x2F;slot&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>(3). 作用域插槽：</strong></p>
+<p> ①.理解：<span style="color:red">数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。</span>（games数据在Category组件中，但使用数据所遍历出来的结构由App组件决定）<br>②. 具体编码：</p>
+<pre><code>     <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">父组件中：
+		&lt;Category&gt;
+			&lt;template scope&#x3D;&quot;scopeData&quot;&gt;
+				&lt;!-- 生成的是ul列表 --&gt;
+				&lt;ul&gt;
+					&lt;li v-for&#x3D;&quot;g in scopeData.games&quot; :key&#x3D;&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;&#x2F;li&gt;
+				&lt;&#x2F;ul&gt;
+			&lt;&#x2F;template&gt;
+		&lt;&#x2F;Category&gt;
+
+		&lt;Category&gt;
+			&lt;template slot-scope&#x3D;&quot;scopeData&quot;&gt;
+				&lt;!-- 生成的是h4标题 --&gt;
+				&lt;h4 v-for&#x3D;&quot;g in scopeData.games&quot; :key&#x3D;&quot;g&quot;&gt;&#123;&#123;g&#125;&#125;&lt;&#x2F;h4&gt;
+			&lt;&#x2F;template&gt;
+		&lt;&#x2F;Category&gt;
+子组件中：
+        &lt;template&gt;
+            &lt;div&gt;
+                &lt;slot :games&#x3D;&quot;games&quot;&gt;&lt;&#x2F;slot&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;template&gt;
+		
+        &lt;script&gt;
+            export default &#123;
+                name:&#39;Category&#39;,
+                props:[&#39;title&#39;],
+                &#x2F;&#x2F;数据在子组件自身
+                data() &#123;
+                    return &#123;
+                        games:[&#39;红色警戒&#39;,&#39;穿越火线&#39;,&#39;劲舞团&#39;,&#39;超级玛丽&#39;]
+                    &#125;
+                &#125;,
+            &#125;
+        &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
+<pre><code>
+</code></pre>
 
                 
             </div>
@@ -728,7 +945,7 @@ new Vue(&#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luxiaozhen01.github.io/2022/04/08/vue2/">https://luxiaozhen01.github.io/2022/04/08/vue2/</a>
+                    <a href="https://luxiaozhen01.github.io/2022/04/08/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/">https://luxiaozhen01.github.io/2022/04/08/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -813,9 +1030,10 @@ new Vue(&#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/08/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/">
                     <div class="card-image">
@@ -833,9 +1051,9 @@ new Vue(&#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -848,6 +1066,7 @@ new Vue(&#123;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -866,13 +1085,13 @@ new Vue(&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                <a href="/2022/04/08/vue2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用命令">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Vue2">
                         
-                        <span class="card-title">git常用命令</span>
+                        <span class="card-title">Vue2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -883,7 +1102,7 @@ new Vue(&#123;
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-08
                             </span>
                         <span class="publish-author">
                             
@@ -900,8 +1119,8 @@ new Vue(&#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
